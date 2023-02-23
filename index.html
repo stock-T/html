@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>チャットページリンクまとめ</title>
+    <style>
+      /* CSSスタイルを定義 */
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h1 {
+        text-align: center;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      li {
+        margin-bottom: 10px;
+      }
+      a {
+        display: block;
+        padding: 10px;
+        background-color: #eee;
+        border-radius: 5px;
+        text-decoration: none;
+        color: #333;
+      }
+      a:hover {
+        background-color: #ccc;
+      }
+
+      @media screen and (max-width: 480px) {
+        body {
+          padding: 10px;
+        }
+        h1 {
+          font-size: 1.5rem;
+        }
+        a {
+          padding: 5px;
+          font-size: 0.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>チャットページリンクまとめ</h1>
+    <p id="authMessage"></p>
+    <ul>
+      <li><a href="#" onclick="authenticate('chat.html', 'チャット1')">チャットページ 1</a></li>
+      <li><a href="#" onclick="authenticate('chat2.html', 'チャット2')">チャットページ 2</a></li>
+      <li><a href="#" onclick="authenticate('chat3.html', 'チャット3')">チャットページ 3</a></li>
+    </ul>
+    <script>
+      function authenticate(pageUrl, password) {
+        const inputPassword = prompt("合言葉を入力してください:");
+        if (inputPassword === password) {
+          window.location.href = pageUrl;
+        } else {
+          document.getElementById("authMessage").textContent =
+            "合言葉が間違っています。";
+        }
+      }
+    </script>
+  </body>
+</html>
